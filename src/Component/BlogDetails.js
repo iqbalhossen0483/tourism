@@ -6,7 +6,7 @@ const BlogDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/tourism/blogs/${id}`)
+    fetch(`https://myserver-production-ddf8.up.railway.app/tourism/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBlog(data);

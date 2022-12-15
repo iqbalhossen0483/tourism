@@ -12,7 +12,7 @@ const AddBlog = () => {
       alert("Description must be at least 100 charecter");
     } else {
       setDisable(true);
-      fetch("http://localhost:5000/tourism/blogs", {
+      fetch("https://myserver-production-ddf8.up.railway.app/tourism/blogs", {
         method: "POST",
         headers: {
           "content-type": "application/json",

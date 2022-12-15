@@ -6,7 +6,7 @@ const AddService = () => {
   const { input } = CustomCss();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (service) => {
-    fetch("http://localhost:5000/tourism/services", {
+    fetch("https://myserver-production-ddf8.up.railway.app/tourism/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

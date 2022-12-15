@@ -21,14 +21,16 @@ const PlaceOrder = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tourism/services/${id}`)
+    fetch(
+      `https://myserver-production-ddf8.up.railway.app/tourism/services/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setPlace(data));
   }, [id]);
 
   const onSubmit = (order) => {
     order.status = "pending";
-    fetch("http://localhost:5000/tourism/orders", {
+    fetch("https://myserver-production-ddf8.up.railway.app/tourism/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
