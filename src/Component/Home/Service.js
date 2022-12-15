@@ -5,7 +5,7 @@ const Service = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://myserver-production-ddf8.up.railway.app/tourism/services")
+    fetch("http://localhost:5000/tourism/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

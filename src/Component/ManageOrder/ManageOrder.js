@@ -5,7 +5,7 @@ const ManageOrder = () => {
   const [orders, setOders] = useState([]);
 
   useEffect(() => {
-    fetch("https://myserver-production-ddf8.up.railway.app/tourism/orders")
+    fetch("http://localhost:5000/tourism/orders")
       .then((res) => res.json())
       .then((data) => {
         setOders(data);
@@ -15,12 +15,9 @@ const ManageOrder = () => {
 
   //delete order
   const handleDelete = (id) => {
-    fetch(
-      `https://myserver-production-ddf8.up.railway.app/tourism/orders/${id}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`http://localhost:5000/tourism/orders/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
@@ -31,16 +28,13 @@ const ManageOrder = () => {
   };
   //update
   const updateOrder = (id) => {
-    fetch(
-      `https://myserver-production-ddf8.up.railway.app/tourism/orders/${id}`,
-      {
-        method: "PUT",
-      }
-    )
+    fetch(`http://localhost:5000/tourism/orders/${id}`, {
+      method: "PUT",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          alert("Tour Completed");
+          alert("Tour Approved");
           setUpdate((prev) => !prev);
         }
       });
@@ -78,12 +72,14 @@ const ManageOrder = () => {
             <td>
               <p className='text-green-400'>{order.status}</p>
               <div className='flex  justify-center items-center'>
-                <button
-                  onClick={() => updateOrder(order._id)}
-                  className='border rounded mx-3 py-1 px-3'
-                >
-                  Complete
-                </button>
+                {order.status !== "approved" && (
+                  <button
+                    onClick={() => updateOrder(order._id)}
+                    className='border rounded mx-3 py-1 px-3'
+                  >
+                    Approve
+                  </button>
+                )}
                 <button
                   onClick={() => handleDelete(order._id)}
                   className='border rounded py-1 px-3'

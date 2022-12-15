@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "./Footer/Footer";
 
 const Desboard = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 

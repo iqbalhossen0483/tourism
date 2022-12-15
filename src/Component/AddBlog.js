@@ -12,7 +12,7 @@ const AddBlog = () => {
       alert("Description must be at least 100 charecter");
     } else {
       setDisable(true);
-      fetch("https://myserver-production-ddf8.up.railway.app/tourism/blogs", {
+      fetch("http://localhost:5000/tourism/blogs", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -33,7 +33,7 @@ const AddBlog = () => {
   return (
     <div className='h-full flex flex-col justify-between'>
       <form
-        className='bg-white rounded-md flex flex-col p-4 m-3 md:m-10 relative'
+        className='bg-white rounded-md flex flex-col p-4 m-3 md:m-10 relative z-0'
         onSubmit={handleSubmit(onSubmit)}
       >
         <input

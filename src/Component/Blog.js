@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("https://myserver-production-ddf8.up.railway.app/tourism/blogs")
+    fetch("http://localhost:5000/tourism/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
