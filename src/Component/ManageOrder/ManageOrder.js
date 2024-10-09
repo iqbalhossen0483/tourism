@@ -5,7 +5,7 @@ const ManageOrder = () => {
   const [orders, setOders] = useState([]);
 
   useEffect(() => {
-    fetch("https://myserver-production-ddf8.up.railway.app/tourism/orders")
+    fetch("https://server.switchcafebd.com/tourism/orders")
       .then((res) => res.json())
       .then((data) => {
         setOders(data);
@@ -15,12 +15,9 @@ const ManageOrder = () => {
 
   //delete order
   const handleDelete = (id) => {
-    fetch(
-      `https://myserver-production-ddf8.up.railway.app/tourism/orders/${id}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`https://server.switchcafebd.com/tourism/orders/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount) {
@@ -31,12 +28,9 @@ const ManageOrder = () => {
   };
   //update
   const updateOrder = (id) => {
-    fetch(
-      `https://myserver-production-ddf8.up.railway.app/tourism/orders/${id}`,
-      {
-        method: "PUT",
-      }
-    )
+    fetch(`https://server.switchcafebd.com/tourism/orders/${id}`, {
+      method: "PUT",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

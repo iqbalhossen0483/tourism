@@ -29,14 +29,14 @@ const Header = () => {
 
         <div className='menus'>
           <NavLink to='/'>Home</NavLink>
-          <NavLink to='/services'>Best Places</NavLink>
+          <NavLink to='/services'>Places</NavLink>
           <NavLink to='/blogs'>Blogs</NavLink>
-          {user.email && <NavLink to='/add-blog'>Add Blog</NavLink>}
+          {user.email && <NavLink to='/add-blog'>Add blog</NavLink>}
         </div>
         <div className='menus'>
           {user.email && (
             <div className='menus'>
-              <NavLink to='/my-order'>My Orders</NavLink>
+              <NavLink to='/my-order'>My orders</NavLink>
               <img
                 className='w-7 h-7 rounded-full ml-3'
                 src={user.photoURL || "/no-photo.png"}

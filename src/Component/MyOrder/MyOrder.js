@@ -6,7 +6,7 @@ const MyOrder = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   useEffect(() => {
-    fetch("https://myserver-production-ddf8.up.railway.app/tourism/orders")
+    fetch("https://server.switchcafebd.com/tourism/orders")
       .then((res) => res.json())
       .then((data) => {
         const userOder = data.filter((order) => order.email === user.email);
@@ -19,12 +19,9 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure to delete this?");
     if (confirm) {
-      fetch(
-        `https://myserver-production-ddf8.up.railway.app/tourism/orders/${id}`,
-        {
-          method: "DELETE",
-        }
-      )
+      fetch(`https://server.switchcafebd.com/tourism/orders/${id}`, {
+        method: "DELETE",
+      })
         .then((res) => res.json())
         .then((data) => {
           const remain = orders.filter((order) => order._id !== id);

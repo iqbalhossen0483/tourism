@@ -56,7 +56,7 @@
     md:justify-between md:px-5 md:py-2 z-50;
   }
   .menus {
-    @apply flex md:flex-row flex-col md:items-center font-medium md:space-x-3 items-start;
+    @apply flex md:flex-row flex-col text-lg md:items-center font-medium md:space-x-3 items-start;
   }
   .header-menus a {
     @apply text-base font-medium;

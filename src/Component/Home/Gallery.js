@@ -4,7 +4,7 @@ const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("https://myserver-production-ddf8.up.railway.app/tourism/gallery")
+    fetch("https://server.switchcafebd.com/tourism/gallery")
       .then((res) => res.json())
       .then((data) => {
         setGallery(data);
